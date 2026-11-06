@@ -1,16 +1,6 @@
 import Image from 'next/image'
 
-const credits = [
-  ['Yönetmen', 'Ben'],
-  ['Senaryo', 'Yine ben'],
-  ['Kod', 'Ben ve Stack Overflow'],
-  ['Tasarım', 'Ben (gradyansız)'],
-  ['Hata Ayıklama', 'Gece 03:00'],
-  ['Kahve', 'Çok fazla'],
-  ['Müzik', 'YouTube'],
-  ['Özel Teşekkür', 'Sabrı için klavyem'],
-  ['Baş Rol', 'Surat'],
-]
+const credits = Array.from({ length: 9 }, () => ['Yapan', 'Ben'] as const)
 
 export function Credits() {
   return (
@@ -45,11 +35,7 @@ export function Credits() {
         </div>
       </div>
 
-      <ul className="sr-only">
-        {credits.map(([role, name]) => (
-          <li key={role}>{`${role}: ${name}`}</li>
-        ))}
-      </ul>
+      <p className="sr-only">{'Yapan: Ben'}</p>
 
       <div className="flex flex-col gap-2 border-t border-paper/20 px-4 py-6 text-xs uppercase tracking-widest text-paper/60 md:flex-row md:justify-between md:px-8">
         <span>{'Son.'}</span>

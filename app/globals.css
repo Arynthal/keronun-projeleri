@@ -80,6 +80,12 @@
   }
 }
 
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
 .animate-face-cross {
   animation: face-cross 9s linear infinite;
 }

@@ -22,13 +22,8 @@ export function SiteHeader() {
 
       <div className="flex flex-1 flex-col justify-center gap-12 px-4 py-16 text-black md:flex-row md:items-center md:justify-between md:px-6">
         <div className="max-w-4xl text-paper">
-          <p className="mb-6 text-sm text-muted-foreground">
-            <span className="text-accent">{'$'}</span> {'cat README.md'}
-          </p>
           <h1 className="text-5xl font-bold leading-none tracking-tight text-balance md:text-8xl">
-            {'Keremin '}
-            <em className="not-italic text-[#d4d61e]">{'Projeleri'}</em>
-            <span className="animate-blink ml-2 inline-block h-[0.8em] w-[0.5em] translate-y-[0.08em] bg-accent" aria-hidden="true" />
+            {'keronun'}
           </h1>
           <p className="mt-8 text-base text-muted-foreground md:text-lg">
             {'// matematikden 10 alsamda en azından kodlama yapabiliyorum :D'}
@@ -47,7 +42,7 @@ export function SiteHeader() {
             width={160}
             height={160}
             unoptimized
-            className="size-28 md:size-40"
+            className="size-28 animate-[spin_3s_linear_infinite] md:size-40"
             priority
           />
           <figcaption className="mt-3 text-xs text-muted-foreground">{'awesome_face.gif · 12kb'}</figcaption>

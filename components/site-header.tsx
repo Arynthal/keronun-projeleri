@@ -20,7 +20,10 @@ export function SiteHeader() {
           {'Keremin '}
           <em className="text-accent">{'Projeleri'}</em>
           </h1>
-          <p className="mt-8 max-w-xl text-sm leading-relaxed text-pretty">
+          <p className="mt-6 font-display text-2xl italic md:text-3xl">
+            {'matematikden 10 alsamda en azından kodlama yapabiliyorum :D'}
+          </p>
+          <p className="mt-6 max-w-xl text-sm leading-relaxed text-pretty">
             {
               'Burada boş zamanlarımda ve bazen boş olmayan zamanlarımda yaptığım projeler var. Bazıları çalışıyor, bazıları çalıştığını iddia ediyor.'
             }

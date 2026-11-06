@@ -4,8 +4,8 @@ const credits = Array.from({ length: 9 }, () => ['Yapan', 'Ben'] as const)
 
 export function Credits() {
   return (
-    <footer aria-labelledby="jenerik" className="relative overflow-hidden bg-ink text-paper">
-      <h2 id="jenerik" className="sr-only">
+    <footer id="jenerik" aria-labelledby="jenerik-baslik" className="relative overflow-hidden border-t border-border bg-ink text-paper">
+      <h2 id="jenerik-baslik" className="sr-only">
         {'Jenerik'}
       </h2>
 
@@ -14,9 +14,9 @@ export function Credits() {
         <div className="pointer-events-none absolute inset-x-0 bottom-0 z-10 h-24 bg-ink [mask-image:linear-gradient(to_top,black,transparent)]" />
         <div className="animate-credits-roll mx-auto max-w-md pt-[30vh]">
           {[...credits, ...credits].map(([role, name], i) => (
-            <div key={i} className="grid grid-cols-2 gap-6 py-3 text-center">
-              <span className="text-right text-xs uppercase tracking-widest text-paper/50">{role}</span>
-              <span className="text-left font-display text-2xl">{name}</span>
+            <div key={i} className="grid grid-cols-2 gap-6 py-3">
+              <span className="text-right text-xs uppercase tracking-widest text-muted-foreground">{role}</span>
+              <span className="text-left text-xl font-bold">{name}</span>
             </div>
           ))}
         </div>
@@ -37,9 +37,11 @@ export function Credits() {
 
       <p className="sr-only">{'Yapan: Ben'}</p>
 
-      <div className="flex flex-col gap-2 border-t border-paper/20 px-4 py-6 text-xs uppercase tracking-widest text-paper/60 md:flex-row md:justify-between md:px-8">
-        <span>{'Son.'}</span>
-        <span>{'© 2026 — Tüm hakları saklı değil'}</span>
+      <div className="flex flex-col gap-2 border-t border-border px-4 py-4 text-xs text-muted-foreground md:flex-row md:justify-between md:px-6">
+        <span>
+          <span className="text-accent">{'$'}</span> {'exit'}
+        </span>
+        <span>{'© 2026 — tüm hakları saklı değil'}</span>
       </div>
     </footer>
   )

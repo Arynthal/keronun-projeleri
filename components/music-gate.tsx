@@ -10,16 +10,16 @@ export function MusicGate() {
   return (
     <>
       {!entered && (
-        <div className="fixed inset-0 z-50 flex flex-col items-center justify-center gap-8 bg-ink px-6 text-paper">
-          <p className="text-xs uppercase tracking-[0.3em] text-paper/60">
-            {'Sesi açman önerilir'}
-          </p>
+        <div className="fixed inset-0 z-50 flex flex-col items-start justify-center gap-6 bg-ink px-6 text-paper md:px-24">
+          <p className="text-sm text-muted-foreground">{'// sesi açman önerilir'}</p>
           <button
             type="button"
             onClick={() => setEntered(true)}
-            className="border border-paper px-8 py-4 font-display text-4xl italic transition-colors hover:bg-paper hover:text-ink focus-visible:bg-paper focus-visible:text-ink md:text-6xl"
+            className="group text-2xl font-bold md:text-5xl"
           >
-            {'İçeri gir →'}
+            <span className="text-accent">{'$ '}</span>
+            <span className="underline-offset-8 group-hover:underline group-focus-visible:underline">{'./içeri-gir.sh'}</span>
+            <span className="animate-blink ml-2 inline-block h-[0.8em] w-[0.5em] translate-y-[0.08em] bg-accent" aria-hidden="true" />
           </button>
         </div>
       )}

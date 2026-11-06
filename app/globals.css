@@ -7,7 +7,6 @@
 @theme inline {
   --font-sans: var(--font-mono-body), ui-monospace, monospace;
   --font-mono: var(--font-mono-body), ui-monospace, monospace;
-  --font-display: var(--font-display-serif), Georgia, serif;
   --color-ring: var(--ring);
   --color-input: var(--input);
   --color-border: var(--border);
@@ -27,20 +26,20 @@
 }
 
 :root {
-  color-scheme: light;
-  --paper: #efeae0;
-  --ink: #161513;
-  --background: var(--paper);
-  --foreground: var(--ink);
-  --primary: var(--ink);
-  --primary-foreground: var(--paper);
-  --muted: #e3ddd0;
-  --muted-foreground: #5f5a50;
-  --accent: #d6411e;
-  --accent-foreground: #efeae0;
-  --border: #161513;
-  --input: #161513;
-  --ring: #d6411e;
+  color-scheme: dark;
+  --ink: #000000;
+  --paper: #d9d9d4;
+  --background: var(--ink);
+  --foreground: var(--paper);
+  --primary: var(--paper);
+  --primary-foreground: var(--ink);
+  --muted: #141414;
+  --muted-foreground: #7a7a74;
+  --accent: #d4d61e;
+  --accent-foreground: #000000;
+  --border: #2a2a28;
+  --input: #2a2a28;
+  --ring: #d4d61e;
   --radius: 0px;
 }
 
@@ -53,7 +52,7 @@
   }
   ::selection {
     background: var(--accent);
-    color: var(--paper);
+    color: var(--ink);
   }
 }
 
@@ -75,12 +74,9 @@
   }
 }
 
-@keyframes ticker {
-  from {
-    transform: translateX(0);
-  }
-  to {
-    transform: translateX(-50%);
+@keyframes blink {
+  50% {
+    opacity: 0;
   }
 }
 
@@ -92,14 +88,16 @@
   animation: credits-roll 40s linear infinite;
 }
 
-.animate-ticker {
-  animation: ticker 30s linear infinite;
+.animate-blink {
+  animation: blink 1s steps(1) infinite;
 }
 
 @media (prefers-reduced-motion: reduce) {
   .animate-face-cross,
-  .animate-credits-roll,
-  .animate-ticker {
+  .animate-credits-roll {
     animation-duration: 120s;
+  }
+  .animate-blink {
+    animation: none;
   }
 }

@@ -1,54 +1,78 @@
 import Image from 'next/image'
 
-const tickerWords = ['Kod', 'Tasarım', 'Oyun', 'Bot', 'Araç', 'Deneme', 'Hata', 'Tekrar']
+const commits = [
+  ['a3f9c1e', 'fix: artık çalışıyor (galiba)'],
+  ['9b2e77d', 'wip'],
+  ['71dd0c4', 'saat 3 oldu ama bitiricem'],
+  ['4c1d0aa', 'bunu neden yaptım'],
+  ['e81f3b2', 'ilk commit'],
+] as const
 
 export function SiteHeader() {
   return (
-    <header className="border-b border-ink">
-      <div className="flex items-center justify-between border-b border-ink px-4 py-2 text-xs uppercase tracking-widest md:px-8">
-        <span>{'Proje Arşivi'}</span>
-        <span className="hidden md:inline">{'Sayı 01 — 2026'}</span>
-        <a href="#projeler" className="underline underline-offset-4 hover:text-accent">
-          {'Projelere git ↓'}
-        </a>
+    <header className="flex min-h-svh flex-col">
+      <div className="flex items-center justify-between border-b border-border px-4 py-2 text-xs text-muted-foreground md:px-6">
+        <span>
+          <span className="text-accent">{'kerem'}</span>
+          {'@laptop:~/projeler'}
+        </span>
+        <span className="hidden md:inline">{'main · 3 değişiklik commitlenmedi'}</span>
+        <span>{'03:47'}</span>
       </div>
 
-      <div className="grid gap-8 px-4 py-12 md:grid-cols-[1fr_auto] md:items-end md:px-8 md:py-20">
-        <div>
-          <p className="mb-4 text-sm text-muted-foreground">{'Merhaba, ben —'}</p>
-          <h1 className="font-display text-6xl leading-[0.9] text-balance md:text-[9rem]">
-          {'Keremin '}
-          <em className="text-accent">{'Projeleri'}</em>
-          </h1>
-          <p className="mt-6 font-display text-2xl italic md:text-3xl">
-            {'matematikden 10 alsamda en azından kodlama yapabiliyorum :D'}
+      <div className="flex flex-1 flex-col justify-center gap-12 px-4 py-16 text-black md:flex-row md:items-center md:justify-between md:px-6">
+        <div className="max-w-4xl text-paper">
+          <p className="mb-6 text-sm text-muted-foreground">
+            <span className="text-accent">{'$'}</span> {'cat README.md'}
           </p>
-          <p className="mt-6 max-w-xl text-sm leading-relaxed text-pretty">
+          <h1 className="text-5xl font-bold leading-none tracking-tight text-balance md:text-8xl">
+            {'Keremin '}
+            <em className="not-italic text-[#d4d61e]">{'Projeleri'}</em>
+            <span className="animate-blink ml-2 inline-block h-[0.8em] w-[0.5em] translate-y-[0.08em] bg-accent" aria-hidden="true" />
+          </h1>
+          <p className="mt-8 text-base text-muted-foreground md:text-lg">
+            {'// matematikden 10 alsamda en azından kodlama yapabiliyorum :D'}
+          </p>
+          <p className="mt-4 max-w-xl text-sm leading-relaxed text-pretty">
             {
               'Burada boş zamanlarımda ve bazen boş olmayan zamanlarımda yaptığım projeler var. Bazıları çalışıyor, bazıları çalıştığını iddia ediyor.'
             }
           </p>
         </div>
-        <Image
-          src="/images/awesome-face.gif"
-          alt="Gülen sarı surat"
-          width={160}
-          height={160}
-          unoptimized
-          className="size-28 -rotate-12 md:size-40"
-          priority
-        />
+
+        <figure className="w-fit shrink-0 border border-border p-3 text-paper">
+          <Image
+            src="/images/awesome-face.gif"
+            alt="Gülen sarı surat"
+            width={160}
+            height={160}
+            unoptimized
+            className="size-28 md:size-40"
+            priority
+          />
+          <figcaption className="mt-3 text-xs text-muted-foreground">{'awesome_face.gif · 12kb'}</figcaption>
+        </figure>
       </div>
 
-      <div className="overflow-hidden border-t border-ink bg-ink py-2 text-paper" aria-hidden="true">
-        <div className="animate-ticker flex w-max gap-8 whitespace-nowrap text-sm uppercase tracking-widest">
-          {[...tickerWords, ...tickerWords, ...tickerWords, ...tickerWords].map((w, i) => (
-            <span key={i} className="flex items-center gap-8">
-              {w}
-              <span className="text-accent">{'*'}</span>
-            </span>
+      <div className="border-t border-border px-4 py-6 text-xs md:px-6">
+        <p className="mb-3 text-muted-foreground">
+          <span className="text-accent">{'$'}</span> {'git log --oneline'}
+        </p>
+        <ul className="flex flex-col gap-1">
+          {commits.map(([hash, msg]) => (
+            <li key={hash}>
+              <span className="text-accent">{hash}</span> {msg}
+            </li>
           ))}
+        </ul>
+      </div>
+
+      <div className="flex items-center justify-between bg-muted text-xs" aria-hidden="true">
+        <div className="flex items-center">
+          <span className="bg-accent px-3 py-1 font-bold text-accent-foreground">{'NORMAL'}</span>
+          <span className="px-3 py-1 text-muted-foreground">{'site-header.tsx [+]'}</span>
         </div>
+        <span className="px-3 py-1 text-muted-foreground">{'utf-8 · ln 3, col 47'}</span>
       </div>
     </header>
   )

@@ -1,15 +1,20 @@
 import { Analytics } from '@vercel/analytics/next'
 import type { Metadata, Viewport } from 'next'
-import { JetBrains_Mono } from 'next/font/google'
+import { Inter, Space_Grotesk } from 'next/font/google'
 import './globals.css'
 
-const mono = JetBrains_Mono({
+const display = Space_Grotesk({
   subsets: ['latin', 'latin-ext'],
-  variable: '--font-mono-body',
+  variable: '--font-display-face',
+})
+
+const body = Inter({
+  subsets: ['latin', 'latin-ext'],
+  variable: '--font-body',
 })
 
 export const metadata: Metadata = {
-  title: 'Keremin Projeleri',
+  title: 'Keronun Projeleri',
   description: 'Matematikden 10 alsam da en azından kodlama yapabiliyorum.',
   generator: 'v0.app',
   icons: {
@@ -28,7 +33,7 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="tr" className={mono.variable}>
+    <html lang="tr" className={`${display.variable} ${body.variable}`}>
       <body className="antialiased">
         {children}
         {process.env.NODE_ENV === 'production' && <Analytics />}

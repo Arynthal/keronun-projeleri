@@ -1,73 +1,51 @@
 import Image from 'next/image'
 
-const commits = [
-  ['a3f9c1e', 'fix: artık çalışıyor (galiba)'],
-  ['9b2e77d', 'wip'],
-  ['71dd0c4', 'saat 3 oldu ama bitiricem'],
-  ['4c1d0aa', 'bunu neden yaptım'],
-  ['e81f3b2', 'ilk commit'],
-] as const
+const band = Array.from({ length: 8 }, () => 'keronun projeleri')
 
 export function SiteHeader() {
   return (
     <header className="flex min-h-svh flex-col">
-      <div className="flex items-center justify-between border-b border-border px-4 py-2 text-xs text-muted-foreground md:px-6">
-        <span>
-          <span className="text-accent">{'kerem'}</span>
-          {'@laptop:~/projeler'}
-        </span>
-        <span className="hidden md:inline">{'main · 3 değişiklik commitlenmedi'}</span>
-        <span>{'03:47'}</span>
+      <div className="flex items-center justify-between px-4 py-5 text-sm md:px-8">
+        <span className="font-display font-bold tracking-tight">{'keronun'}</span>
+        <span className="text-muted-foreground">{'İstanbul · 2026'}</span>
       </div>
 
-      <div className="flex flex-1 flex-col justify-center gap-12 px-4 py-16 text-black md:flex-row md:items-center md:justify-between md:px-6">
+      <div className="flex flex-1 flex-col justify-center gap-12 px-4 py-16 md:flex-row md:items-center md:justify-between md:px-8">
         <div className="max-w-4xl text-paper">
-          <h1 className="text-5xl font-bold leading-none tracking-tight text-balance md:text-8xl">
-            {'keronun'}
+          <h1 className="font-display text-6xl font-bold leading-[0.9] tracking-tighter text-balance md:text-9xl">
+            {'keronun '}
+            <span className="text-accent">{'projeleri'}</span>
           </h1>
-          <p className="mt-8 text-base text-muted-foreground md:text-lg">
-            {'// matematikden 10 alsamda en azından kodlama yapabiliyorum :D'}
+          <p className="mt-8 text-lg md:text-xl">
+            {'matematikden 10 alsamda en azından kodlama yapabiliyorum :D'}
           </p>
-          <p className="mt-4 max-w-xl text-sm leading-relaxed text-pretty">
+          <p className="mt-4 max-w-xl leading-relaxed text-muted-foreground text-pretty">
             {
               'Burada boş zamanlarımda ve bazen boş olmayan zamanlarımda yaptığım projeler var. Bazıları çalışıyor, bazıları çalıştığını iddia ediyor.'
             }
           </p>
         </div>
 
-        <figure className="w-fit shrink-0 border border-border p-3 text-paper">
-          <Image
-            src="/images/awesome-face.gif"
-            alt="Gülen sarı surat"
-            width={160}
-            height={160}
-            unoptimized
-            className="size-28 animate-[spin_3s_linear_infinite] md:size-40"
-            priority
-          />
-          <figcaption className="mt-3 text-xs text-muted-foreground">{'awesome_face.gif · 12kb'}</figcaption>
-        </figure>
+        <Image
+          src="/images/awesome-face.gif"
+          alt="Gülen sarı surat"
+          width={160}
+          height={160}
+          unoptimized
+          className="size-28 shrink-0 animate-[spin_3s_linear_infinite] md:size-44"
+          priority
+        />
       </div>
 
-      <div className="border-t border-border px-4 py-6 text-xs md:px-6">
-        <p className="mb-3 text-muted-foreground">
-          <span className="text-accent">{'$'}</span> {'git log --oneline'}
-        </p>
-        <ul className="flex flex-col gap-1">
-          {commits.map(([hash, msg]) => (
-            <li key={hash}>
-              <span className="text-accent">{hash}</span> {msg}
-            </li>
+      <div className="overflow-hidden bg-accent py-4 text-accent-foreground" aria-hidden="true">
+        <div className="animate-marquee flex w-max gap-10 whitespace-nowrap font-display text-2xl font-bold tracking-tight md:text-4xl">
+          {[...band, ...band].map((text, i) => (
+            <span key={i} className="flex items-center gap-10">
+              {text}
+              <span className="size-3 rounded-full bg-ink" />
+            </span>
           ))}
-        </ul>
-      </div>
-
-      <div className="flex items-center justify-between bg-muted text-xs" aria-hidden="true">
-        <div className="flex items-center">
-          <span className="bg-accent px-3 py-1 font-bold text-accent-foreground">{'NORMAL'}</span>
-          <span className="px-3 py-1 text-muted-foreground">{'site-header.tsx [+]'}</span>
         </div>
-        <span className="px-3 py-1 text-muted-foreground">{'utf-8 · ln 3, col 47'}</span>
       </div>
     </header>
   )

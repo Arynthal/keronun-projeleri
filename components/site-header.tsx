@@ -17,9 +17,8 @@ export function SiteHeader() {
         <div>
           <p className="mb-4 text-sm text-muted-foreground">{'Merhaba, ben —'}</p>
           <h1 className="font-display text-6xl leading-[0.9] text-balance md:text-[9rem]">
-            {'Yaptığım '}
-            <em className="text-accent">{'şeyler'}</em>
-            {', bir arada.'}
+          {'Keremin '}
+          <em className="text-accent">{'Projeleri'}</em>
           </h1>
           <p className="mt-8 max-w-xl text-sm leading-relaxed text-pretty">
             {

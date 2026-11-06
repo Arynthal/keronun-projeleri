@@ -1,0 +1,105 @@
+@import 'tailwindcss';
+@import 'tw-animate-css';
+@import 'shadcn/tailwind.css';
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --font-sans: var(--font-mono-body), ui-monospace, monospace;
+  --font-mono: var(--font-mono-body), ui-monospace, monospace;
+  --font-display: var(--font-display-serif), Georgia, serif;
+  --color-ring: var(--ring);
+  --color-input: var(--input);
+  --color-border: var(--border);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent: var(--accent);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-muted: var(--muted);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary: var(--primary);
+  --color-foreground: var(--foreground);
+  --color-background: var(--background);
+  --color-ink: var(--ink);
+  --color-paper: var(--paper);
+  --radius-sm: 0px;
+  --radius-md: 0px;
+  --radius-lg: 0px;
+}
+
+:root {
+  color-scheme: light;
+  --paper: #efeae0;
+  --ink: #161513;
+  --background: var(--paper);
+  --foreground: var(--ink);
+  --primary: var(--ink);
+  --primary-foreground: var(--paper);
+  --muted: #e3ddd0;
+  --muted-foreground: #5f5a50;
+  --accent: #d6411e;
+  --accent-foreground: #efeae0;
+  --border: #161513;
+  --input: #161513;
+  --ring: #d6411e;
+  --radius: 0px;
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground font-mono;
+  }
+  ::selection {
+    background: var(--accent);
+    color: var(--paper);
+  }
+}
+
+@keyframes face-cross {
+  from {
+    transform: translateX(-30vw) rotate(0deg);
+  }
+  to {
+    transform: translateX(110vw) rotate(720deg);
+  }
+}
+
+@keyframes credits-roll {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(-50%);
+  }
+}
+
+@keyframes ticker {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-face-cross {
+  animation: face-cross 9s linear infinite;
+}
+
+.animate-credits-roll {
+  animation: credits-roll 40s linear infinite;
+}
+
+.animate-ticker {
+  animation: ticker 30s linear infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-face-cross,
+  .animate-credits-roll,
+  .animate-ticker {
+    animation-duration: 120s;
+  }
+}

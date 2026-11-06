@@ -20,11 +20,6 @@ export function SiteHeader() {
           <p className="mt-8 text-lg md:text-xl">
             {'matematikden 10 alsamda en azından kodlama yapabiliyorum :D'}
           </p>
-          <p className="mt-4 max-w-xl leading-relaxed text-muted-foreground text-pretty">
-            {
-              'Burada boş zamanlarımda ve bazen boş olmayan zamanlarımda yaptığım projeler var. Bazıları çalışıyor, bazıları çalıştığını iddia ediyor.'
-            }
-          </p>
         </div>
 
         <Image

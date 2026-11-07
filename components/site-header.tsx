@@ -12,21 +12,20 @@ export function SiteHeader() {
           <h1 className="font-display text-6xl font-bold leading-[0.9] tracking-tighter text-balance md:text-9xl">
             {'keronun '}
             <span className="text-accent">{'projeleri'}</span>
+            <Image
+              src="/images/awesome-face.gif"
+              alt="Gülen sarı surat"
+              width={96}
+              height={96}
+              unoptimized
+              className="ml-3 inline-block size-12 align-middle animate-[spin_3s_linear_infinite] md:size-24"
+              priority
+            />
           </h1>
           <p className="mt-8 text-lg md:text-xl">
             {'matematikden 10 alsamda en azından kodlama yapabiliyorum :D'}
           </p>
         </div>
-
-        <Image
-          src="/images/awesome-face.gif"
-          alt="Gülen sarı surat"
-          width={160}
-          height={160}
-          unoptimized
-          className="size-28 shrink-0 animate-[spin_3s_linear_infinite] md:size-44"
-          priority
-        />
       </div>
 
       <div className="overflow-hidden bg-accent py-4 text-accent-foreground" aria-hidden="true">

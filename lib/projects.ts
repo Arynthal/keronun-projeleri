@@ -14,13 +14,13 @@ export const projects: Project[] = [
     kind: 'Web',
     description:
       'evet. bu sitede bi proje. yani proje sitesi aslında proje sitesindeki bi proje AAAAAAAAAA',
-    stack: ['Next.js', 'Tailwind'],
+    stack: ['Next.js'],
   },
   {
     title: 'L.I.M.B.O',
     year: '2024',
     kind: 'Araç',
     description: 'çakma korku oyunu işte :d',
-    stack: ['Python', 'Pandas'],
+    stack: ['Python'],
   },
 ]

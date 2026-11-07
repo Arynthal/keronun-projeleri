@@ -15,7 +15,7 @@ const body = Inter({
 })
 
 export const metadata: Metadata = {
-  title: 'Keronun Projelerim',
+  title: 'Keronun Projeleri',
   description: 'Matematikden 10 alsam da en azından kodlama yapabiliyorum.',
   generator: 'v0.app',
   icons: {

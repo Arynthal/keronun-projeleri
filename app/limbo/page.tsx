@@ -32,7 +32,7 @@ export default function LimboPage() {
           href={DOWNLOAD_URL}
           className="mt-4 inline-flex items-center justify-center bg-accent px-10 py-5 font-display text-xl font-bold uppercase tracking-wide text-accent-foreground transition-colors hover:bg-paper"
         >
-          Oyunu indir
+          İndirmek için tıkla
         </a>
       </div>
     </main>

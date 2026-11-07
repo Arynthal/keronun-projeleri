@@ -20,27 +20,27 @@
   --color-background: var(--background);
   --color-ink: var(--ink);
   --color-paper: var(--paper);
-  --radius-sm: 0px;
-  --radius-md: 0px;
-  --radius-lg: 0px;
+  --radius-sm: 0.75rem;
+  --radius-md: 1.25rem;
+  --radius-lg: 1.75rem;
 }
 
 :root {
   color-scheme: dark;
-  --ink: #000000;
-  --paper: #d9d9d4;
-  --background: var(--ink);
+  --ink: #080d17;
+  --paper: #f2f4fa;
+  --background: #0b1120;
   --foreground: var(--paper);
-  --primary: var(--paper);
-  --primary-foreground: var(--ink);
-  --muted: #141414;
-  --muted-foreground: #7a7a74;
-  --accent: #d4d61e;
-  --accent-foreground: #000000;
-  --border: #2a2a28;
-  --input: #2a2a28;
-  --ring: #d4d61e;
-  --radius: 0px;
+  --primary: #f5f7fc;
+  --primary-foreground: #0b1120;
+  --muted: #172136;
+  --muted-foreground: #a5afc2;
+  --accent: #e9d15d;
+  --accent-foreground: #17170c;
+  --border: #29344a;
+  --input: #29344a;
+  --ring: #e9d15d;
+  --radius: 1.25rem;
 }
 
 @layer base {
@@ -48,7 +48,11 @@
     @apply border-border outline-ring/50;
   }
   body {
-    @apply bg-background text-foreground font-sans;
+    @apply min-h-svh bg-background text-foreground font-sans;
+    background-image:
+      radial-gradient(ellipse at 12% 4%, rgb(88 139 232 / 14%), transparent 34rem),
+      radial-gradient(ellipse at 94% 40%, rgb(120 91 205 / 10%), transparent 30rem);
+    background-attachment: fixed;
   }
   ::selection {
     background: var(--accent);

@@ -13,7 +13,7 @@ export const projects: Project[] = [
     year: '2026',
     kind: 'Web',
     description:
-      'Şu an baktığın sayfa. Gradyan yok, parlayan kart yok. Arka planda müzik var, soldan sağa bir surat geçiyor.',
+      'evet. bu sitede bi proje. yani proje sitesi aslında proje sitesindeki bi proje AAAAAAAAAA',
     stack: ['Next.js', 'Tailwind'],
   },
   {

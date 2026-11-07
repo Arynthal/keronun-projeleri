@@ -1,4 +1,6 @@
+import Link from 'next/link'
 import type { Metadata } from 'next'
+import { BouncingFaces } from '@/components/bouncing-faces'
 
 export const metadata: Metadata = {
   title: 'L.I.M.B.O — Keronun Projeleri',
@@ -9,12 +11,14 @@ const DOWNLOAD_URL =
 
 export default function LimboPage() {
   return (
-    <main className="flex min-h-svh flex-col items-center justify-center px-4 py-16 text-center">
-      <a href="/" className="mb-12 self-start text-sm text-muted-foreground hover:text-paper">
-        ← Projelerime dön
-      </a>
+    <main className="relative isolate flex min-h-svh flex-col items-center justify-center overflow-hidden px-4 py-16 text-center">
+      <BouncingFaces />
 
-      <div className="flex flex-col items-center gap-6">
+      <Link href="/" className="relative z-10 mb-12 self-start text-sm text-muted-foreground hover:text-paper">
+        ← Projelerime dön
+      </Link>
+
+      <div className="relative z-10 flex flex-col items-center gap-6">
         <p className="text-sm font-bold uppercase tracking-[0.2em] text-accent">
           2026 · Oyun
         </p>

@@ -15,10 +15,10 @@ export function SiteHeader() {
             <Image
               src="/images/awesome-face.gif"
               alt="Gülen sarı surat"
-              width={96}
-              height={96}
+              width={144}
+              height={144}
               unoptimized
-              className="ml-3 inline-block size-12 align-middle animate-[spin_3s_linear_infinite] md:size-24"
+              className="ml-3 inline-block size-20 align-middle animate-[spin_3s_linear_infinite] md:size-36"
               priority
             />
           </h1>

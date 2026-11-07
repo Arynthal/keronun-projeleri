@@ -9,16 +9,18 @@ export function SiteHeader() {
       <div className="relative flex flex-1 flex-col justify-center gap-12 px-4 py-16 md:flex-row md:items-center md:justify-between md:px-8">
         <BouncingFaces />
         <div className="relative z-10 max-w-4xl text-paper">
-          <h1 className="font-display text-6xl font-bold leading-[0.9] tracking-tighter text-balance md:text-9xl">
-            {'keronun '}
-            <span className="text-accent">{'projeleri'}</span>
+          <h1 className="flex items-center gap-2 font-display text-4xl font-bold leading-[0.9] tracking-tighter md:gap-5 md:text-9xl">
+            <span className="flex flex-col whitespace-nowrap">
+              <span>{'keronun'}</span>
+              <span className="text-accent">{'projeleri'}</span>
+            </span>
             <Image
               src="/images/awesome-face.gif"
               alt="Gülen sarı surat"
-              width={144}
-              height={144}
+              width={256}
+              height={256}
               unoptimized
-              className="ml-3 inline-block size-20 align-middle animate-[spin_3s_linear_infinite] md:size-36"
+              className="size-20 shrink-0 animate-[spin_3s_linear_infinite] md:size-64"
               priority
             />
           </h1>

@@ -1,6 +1,7 @@
 import { Analytics } from '@vercel/analytics/next'
 import type { Metadata, Viewport } from 'next'
 import { Inter, Space_Grotesk } from 'next/font/google'
+import { MusicGate } from '@/components/music-gate'
 import './globals.css'
 
 const display = Space_Grotesk({
@@ -35,6 +36,7 @@ export default function RootLayout({
   return (
     <html lang="tr" className={`${display.variable} ${body.variable}`}>
       <body className="antialiased">
+        <MusicGate />
         {children}
         {process.env.NODE_ENV === 'production' && <Analytics />}
       </body>

@@ -6,10 +6,6 @@ const band = Array.from({ length: 8 }, () => 'keronun projeleri')
 export function SiteHeader() {
   return (
     <header className="flex min-h-svh flex-col">
-      <div className="flex items-center justify-end px-4 py-5 text-sm md:px-8">
-        <span className="text-muted-foreground">{'İstanbul · 2026'}</span>
-      </div>
-
       <div className="relative flex flex-1 flex-col justify-center gap-12 px-4 py-16 md:flex-row md:items-center md:justify-between md:px-8">
         <BouncingFaces />
         <div className="relative z-10 max-w-4xl text-paper">

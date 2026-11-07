@@ -15,6 +15,7 @@ export const projects: Project[] = [
     description:
       'evet. bu sitede bi proje. yani proje sitesi aslında proje sitesindeki bi proje AAAAAAAAAA',
     stack: ['Next.js'],
+    link: '/',
   },
   {
     title: 'L.I.M.B.O',
@@ -22,5 +23,6 @@ export const projects: Project[] = [
     kind: 'Oyun',
     description: 'çakma korku oyunu işte :d',
     stack: ['Python'],
+    link: '/limbo',
   },
 ]

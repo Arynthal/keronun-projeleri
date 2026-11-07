@@ -20,21 +20,26 @@ const directions = [
   [-1, -1],
 ] as const
 
-export function BouncingFaces() {
+type BouncingFacesProps = {
+  collisionTargetId?: string
+}
+
+export function BouncingFaces({ collisionTargetId }: BouncingFacesProps) {
   const fieldRef = useRef<HTMLDivElement>(null)
   const faceRefs = useRef<(HTMLDivElement | null)[]>([])
 
   useEffect(() => {
     const field = fieldRef.current
     const nodes = faceRefs.current.slice(0, faces.length)
+    const target = collisionTargetId ? document.getElementById(collisionTargetId) : null
     if (!field || nodes.some((node) => !node)) return
 
     const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches
     const particles = faces.map((face, i) => ({
       x: 0,
       y: 0,
-      vx: directions[i][0] * (64 + (i % 3) * 22),
-      vy: directions[i][1] * (48 + (i % 4) * 17),
+      vx: directions[i][0] * (86 + (i % 3) * 28),
+      vy: directions[i][1] * (66 + (i % 4) * 23),
       size: face.size,
       mass: face.size * face.size,
     }))
@@ -93,6 +98,39 @@ export function BouncingFaces() {
         }
       })
 
+      if (target) {
+        const fieldRect = field.getBoundingClientRect()
+        const targetRect = target.getBoundingClientRect()
+        const targetX = targetRect.left - fieldRect.left + targetRect.width / 2
+        const targetY = targetRect.top - fieldRect.top + targetRect.height / 2
+        const targetRadius = Math.min(targetRect.width, targetRect.height) / 2
+
+        particles.forEach((particle) => {
+          let dx = particle.x + particle.size / 2 - targetX
+          let dy = particle.y + particle.size / 2 - targetY
+          let distance = Math.hypot(dx, dy)
+          const minDistance = targetRadius + particle.size / 2
+
+          if (distance >= minDistance) return
+          if (distance === 0) {
+            dx = 1
+            distance = 1
+          }
+
+          const nx = dx / distance
+          const ny = dy / distance
+          const overlap = minDistance - distance
+          particle.x += nx * overlap
+          particle.y += ny * overlap
+
+          const velocityTowardTarget = particle.vx * nx + particle.vy * ny
+          if (velocityTowardTarget < 0) {
+            particle.vx -= 1.92 * velocityTowardTarget * nx
+            particle.vy -= 1.92 * velocityTowardTarget * ny
+          }
+        })
+      }
+
       for (let i = 0; i < particles.length; i += 1) {
         for (let j = i + 1; j < particles.length; j += 1) {
           const first = particles[i]
@@ -141,7 +179,7 @@ export function BouncingFaces() {
       observer.disconnect()
       window.cancelAnimationFrame(frame)
     }
-  }, [])
+  }, [collisionTargetId])
 
   return (
     <div ref={fieldRef} className="pointer-events-none absolute inset-0 overflow-hidden" aria-hidden="true">

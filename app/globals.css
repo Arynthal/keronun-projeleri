@@ -108,37 +108,7 @@
   animation: marquee 25s linear infinite;
 }
 
-.bounce-field {
-  container-type: size;
-}
-
-@keyframes bounce-x {
-  to {
-    transform: translateX(calc(100cqw - var(--face-size)));
-  }
-}
-
-@keyframes bounce-y {
-  to {
-    transform: translateY(calc(100cqh - var(--face-size)));
-  }
-}
-
-.bounce-x {
-  animation: bounce-x var(--dur-x) linear infinite alternate;
-  animation-delay: var(--delay);
-}
-
-.bounce-y {
-  animation: bounce-y var(--dur-y) linear infinite alternate;
-  animation-delay: var(--delay);
-}
-
 @media (prefers-reduced-motion: reduce) {
-  .bounce-x,
-  .bounce-y {
-    animation: none;
-  }
   .animate-face-cross,
   .animate-credits-roll {
     animation-duration: 120s;

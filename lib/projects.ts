@@ -19,7 +19,7 @@ export const projects: Project[] = [
   {
     title: 'L.I.M.B.O',
     year: '2024',
-    kind: 'Oyun',
+    kind: 'Araç',
     description: 'çakma korku oyunu işte :d',
     stack: ['Python', 'Pandas'],
   },

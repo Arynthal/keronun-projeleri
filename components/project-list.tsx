@@ -5,7 +5,7 @@ export function ProjectList() {
     <section id="projeler" aria-labelledby="projeler-baslik" className="px-4 py-24 md:px-8">
       <div className="flex items-end justify-between gap-6 border-b-2 border-paper pb-6">
         <h2 id="projeler-baslik" className="font-display text-5xl font-bold leading-none tracking-tighter md:text-8xl">
-          {'Projeler'}
+          {'Projelerim'}
         </h2>
         <span className="font-display text-5xl font-bold leading-none text-accent md:text-8xl">
           {String(projects.length).padStart(2, '0')}

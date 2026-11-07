@@ -26,6 +26,11 @@ export function ProjectList() {
                 <p className="mt-3 max-w-2xl leading-relaxed text-muted-foreground text-pretty md:group-hover:text-accent-foreground">
                   {project.description}
                 </p>
+                {project.link === '/limbo' && (
+                  <p className="mt-4 font-display text-sm font-bold uppercase tracking-wide text-accent md:group-hover:text-accent-foreground">
+                    İndirmek için tıkla →
+                  </p>
+                )}
               </div>
 
               <div className="flex flex-wrap items-center gap-2 md:w-56 md:flex-col md:items-end">
